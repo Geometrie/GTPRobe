@@ -47,7 +47,7 @@
 #define STR_ENGINE_OPENING "引擎正在启动，请耐心等待"
 #define STR_ENGINE_AVAILABLE "引擎已启动"
 #define STR_ENGINE_CLOSING "引擎正在关闭"
-#define STR_VERSION "当前版本：1.01 测试版"
+#define STR_VERSION "当前版本：1.01"
 #define STR_CLOSE "关闭"
 #define STR_MOVE_TURN "着子权"
 #define STR_PRISONERS "提子"
@@ -75,6 +75,7 @@ Code::Blocks支持创建一个wxWidgets项目，自动包含wxWidgets的相关路径，这样也许可以
 然后点一下文件菜单或工具栏里的“新对局”，即可使用“重做”键来追随跑新谱的进度了。注意没跑完的谱切不能点“新对局”，否则会丢失没跑完的棋谱信息！\n\n\
 如果一谱没有跑完，你想要关闭引擎，可以使用编辑菜单或工具栏里的“关闭引擎”，相当于在autogtp里输入命令“q”，autogtp会自动保存进度，也会有个新的“.sgf”文件出现，下次借助GTPRobe跑谱的时候不要忘记导入。\n\n\
 需要注意的是，由于autogtp对“q”的反应需要几秒到十几秒的时间，所以关闭跑谱引擎或者退出程序的时候，一定要耐心等待一会儿。\n\n\
+如果你使用菜单或者工具栏里的关闭了引擎，又想在继续跑谱，请不要直接打开引擎，一定要再读入引擎关闭时保存的那个.sgf文件，否则显示的棋谱会缺少你关闭引擎时最后的一手棋！\n\n\
 祝大家跑谱愉快！\n\n"
 #else
 #define STR_NEW "new"
@@ -131,14 +132,14 @@ Code::Blocks支持创建一个wxWidgets项目，自动包含wxWidgets的相关路径，这样也许可以
 #define STR_DIRECTION "Welcome to try GTPRobe! This is a software that provides a graphical user interface of AutoGTP program that provides training data for the computer go software Leela Zero.\n\n\
 If you're interested in more information about Leela Zero and AutoGTP, please browse the following website:\n\n\
 zero.sjeng.org\n\n\
-LZRobe can help you to play Go againt Leela Zero or analyze the Go game records with Leela Zero to improve your strength of the game.\n\n\
-LZRobe is written in C++ pragramming language with a GUI Library named wxWidgets.\n\n\
-So if you would like to compile LZRobe, you have to download and install the wxWidgets library first.Please look up the following website:\n\n\
+GTPRobe can help you to play Go againt Leela Zero or analyze the Go game records with Leela Zero to improve your strength of the game.\n\n\
+GTPRobe is written in C++ pragramming language with a GUI Library named wxWidgets.\n\n\
+So if you would like to compile GTPRobe, you have to download and install the wxWidgets library first.Please look up the following website:\n\n\
 www.wxwidgets.org\n\n\
-It is not difficult to compile LZRobe with Visual Studio or Code::Blocks.\n\n\
-If you try to compile LZRobe, you should create a Win32 GUI empty project and add the files, including.h files, .cpp files, a .rc file, a .ico file and.bmp files.\n\n\
+It is not difficult to compile GTPRobe with Visual Studio or Code::Blocks.\n\n\
+If you try to compile GTPRobe, you should create a Win32 GUI empty project and add the files, including.h files, .cpp files, a .rc file, a .ico file and.bmp files.\n\n\
 Don't forget appending include and lib dictionaries of wxWidgets in the setting of your project.\n\n\
-Code::Blocks supports creating a wxWidgets project containing the path of wxWidgets, this maybe make it simpler to compile LZRobe.\n\n\
+Code::Blocks supports creating a wxWidgets project containing the path of wxWidgets, this maybe make it simpler to compile GTPRobe.\n\n\
 In order to create a more harmonic game running, GTPRobe need not to set the engine path, but you have to put the GTPRobe.exe file in the same dictionary with autogtp.exe\n\n\
 In addition, the file name of \"autogtp.exe\" is not allowed to change, otherwice GTPRobe cannot find the engine.\n\n\
 If you used command \"q\" to exit the previous running autogtp, then a file with random name but an extention name of \".sgf\" file storing game record would occured.\n\n\
@@ -148,6 +149,7 @@ But if one game has ended, if you will continue to watch the next game played au
 Then press the \"new game\" button in the file menu or tool bar, and the \"Redo\" button can be used to persue the progress of the new game. Please keep in mind that do not press the button \"New Game\", otherwise the info of the running game will be lost.\n\n\
 If you want to close the engine before a game ends, you can use \"Close Engine\" button in edit menu or tool bar. This is equivalent to input command \"q\" in auto gtp, which makes autogtp save the process info, and a new .sgf file will be created. Don't forget to import this file into GTPRobe before playing the game next time.\n\n\
 Due to autogtp will take several seconds to replay \"q\", so please wait patiently when you closing the engine or exit the program.\n\n\
+If you want to continue the game playing after you close the engin with the button in edit menu or toolbar, please do not open the engine directionly. You have to open the new .sgf file when you closed the engine, other the last step before you close the engine will be lost in the demostrating gameboard.\n\n\
 Wish every one enjoy the game playing!\n\n"
 #endif
 #endif
